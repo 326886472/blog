@@ -1,0 +1,18 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: 326886472
+email: 15536323106@163.com
+description: >
+    fullstack web developer
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://github.com/326886472" # the base hostname & protocol for your site
+github_username: 326886472
+
+# Build settings
+markdown: kramdown
