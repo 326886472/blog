@@ -54,10 +54,39 @@ emulator-5554 offline   # Google模拟器
 新建ANDROID_HOME环境变量，路径为AndroidSDK路径，如:C:USERS\joelm\AppDate\Local\Android\sdk
 
 你需要关闭现有的命令符提示窗口然后重新打开，这样新的环境变量才能生效。
+##### 安装JDK(1.7)
+新建一个文件夹jdk（第一次路径是jdk的安装路径）安装jdk，之后在安装过程中，第二次选择路径时，在jdk中新建一个jdk(或是其他文件名)用来作为第二次的选择路径(第二次路径是jre路径)，如果两次的路径一样就会发生覆盖。
+
+设置环境变量
+新建JAVA_HOME 值为jdk的路径
+添加jdk/bin到PATH
 ##### 测试安装
+找到项目中package.json文件，把react-native的版本号改成0.38
+
+把react-native-swipeout中的index.js文件中的开头替换为
 ```
-react-native init AwesomeProject
-cd AwesomeProject
+var tweenState = require('react-tween-state')
+var styles = require('./styles.js')
+import React, { Component } from 'react';
+import  {
+    PanResponder, TouchableHighlight, StyleSheet, Text, View
+} from 'react-native';
+```
+
+在项目的根目录下运行
+```
+npm install
+```
+根据package.json下载依赖项
+```
+react-native start
+```
+启动项目
+```
 react-native run-android
 ```
+在设备上安装运行
+
+==注意==：如果出现在10/12的时候卡主报错，可能是因为闪屏显示出错，可以尝试在android-app-src-java-com-realtimemedical-MainApplication.java中在new *RCTSplashScreenPackage(MainActivity.mainActivity)*后添加false参数跳过闪屏。
+
 你可以使用--version参数创建指定版本的项目。例如react-native init MyApp --version 0.39.2。注意版本号必须精确到两个小数点。
